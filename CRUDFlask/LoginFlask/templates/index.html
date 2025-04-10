@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Flask</title>
+</head>
+<body>
+    <h1>Lista de Personas</h1>
+    <a href="/crear">Agregar Persona</a>
+    <ul>
+        {% for persona in personas %}
+        <li>
+            {{ persona.nombre }} ({{ persona.edad }} años)
+            <a href="/editar/{{ persona.id }}">Editar</a>
+            <a href="/eliminar/{{ persona.id }}">Eliminar</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
